@@ -62,6 +62,11 @@ function App() {
         : setTimeout(() => resetTurn(), 1000)
       }
   }, [choiceOne, choiceTwo])
+
+  //start game on load
+  useEffect(() => {
+    shuffleCards()
+  }, [])
   
   
 
@@ -81,6 +86,7 @@ function App() {
            />
         ))}
       </div>
+      <p>Turns: {turns} </p>
     </div>
   );
 }
